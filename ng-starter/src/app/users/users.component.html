@@ -1,0 +1,45 @@
+<div class="p-grid">
+  <h1 class="p-col-5">Users</h1>
+  <h1 class="p-col-5">Count: {{users.length}}</h1>
+  <div class="p-col-1" style="padding-top: 40px;">
+    <button pButton label="Add User" type="button" (click)="openAddUserDialog=true"></button>
+  </div>
+</div>
+<ul>
+  <li *ngFor="let user of users">
+    <a routerLink="/details/{{user.id}}">{{ user.fullName }}</a>
+
+    <ul>
+      <li>{{ user.email }}</li>
+      <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p-dialog header="Add User" [(visible)]="openAddUserDialog" [modal]="true" [style]="{width: '600px', height: '400px'}">
+  <form class="p-grid" [formGroup]="userForm" (ngSubmit)="postUser(userForm.value)">
+    <div class="p-col-12">
+      <label for="name">Full Name: </label>
+      <input id="name" pInputText type="text" formControlName="fullName">
+    </div>
+    <div class="p-col-12">
+      <label for="name">User Name: </label>
+      <input id="name" pInputText type="text" formControlName="username">
+    </div>
+    <div class="p-col-12">
+      <label for="name">Email: </label>
+      <input id="name" pInputText type="text" formControlName="email">
+    </div>
+    <div class="p-col-12">
+      <label for="name">Website: </label>
+      <input id="name" pInputText type="text" formControlName="website">
+    </div>
+    <div class="p-col-12">
+      <label for="name">Phone: </label>
+      <input id="name" pInputText type="text" formControlName="phone">
+    </div>
+    <div class="p-col-2 p-offset-9">
+      <button pButton class="button addButton" type="submit">Add</button>
+    </div>
+  </form>
+</p-dialog>

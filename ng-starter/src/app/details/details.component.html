@@ -1,0 +1,15 @@
+<h1>{{ user.fullName }}</h1>
+
+<div class="p-grid">
+<ul class="p-col-12">
+  <li><strong>Username:</strong> &nbsp; <input type="text" pInputText [(ngModel)]="user.username"></li>
+  <li><strong>Email:</strong> &nbsp; <input type="text" pInputText [(ngModel)]="user.email"></li>
+  <li><strong>Phone:</strong> &nbsp; <input type="text" pInputText [(ngModel)]="user.phone"></li>
+  <li><strong>Website:</strong> &nbsp; <input type="text" pInputText [(ngModel)]="user.website"></li>
+</ul>
+</div>
+<br>
+<div class="p-grid p-offset-5">
+  <button class="p-col-2" pButton type="button" label="Delete" (click)="deleteUser()"></button>&nbsp;
+  <button class="p-col-2" pButton type="button" label="Update" (click)="updateUser()"></button>
+</div>
