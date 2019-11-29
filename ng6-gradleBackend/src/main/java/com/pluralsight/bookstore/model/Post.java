@@ -1,10 +1,7 @@
 package com.pluralsight.bookstore.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,26 +10,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Getter @Setter @ToString
-public class User {
+@Getter @Setter
+public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
-    private String fullName;
+    private int userId;
 
     @Column
-    private String username;
+    private String title;
 
     @Column
-    private String email;
-
-    @Column
-    private String phone;
-
-    @Column
-    private String website;
+    private String body;
 
 }

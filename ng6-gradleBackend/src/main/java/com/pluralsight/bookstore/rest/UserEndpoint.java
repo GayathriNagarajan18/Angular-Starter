@@ -32,6 +32,7 @@ public class UserEndpoint {
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUsers() {
+        System.out.println("get user");
         return Response.ok(userRepository.getUsers()).build();
     }
 
@@ -85,6 +86,7 @@ public class UserEndpoint {
     @Path("/user")
     @Consumes(APPLICATION_JSON)
     public Response updateUser(User user) {
+        System.out.println("Update user");
         userRepository.updateUser(user);
         return Response.noContent().build();
     }
