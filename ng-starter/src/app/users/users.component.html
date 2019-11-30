@@ -1,20 +1,28 @@
+<div *ngIf="dataReceived">
 <div class="p-grid">
-  <h1 class="p-col-5">Users</h1>
-  <h1 class="p-col-5">Count: {{users.length}}</h1>
+  <h1 class="p-col-3">Users</h1>
+  <h1 class="p-col-3">Count: {{getUsers().length}}</h1>
+  <div class="p-col-5">
+    <h3>Select Country: &nbsp;</h3>
+    <p-dropdown [options]="countries" [(ngModel)]="country" optionLabel="country"></p-dropdown>
+  </div>
   <div class="p-col-1" style="padding-top: 40px;">
     <button pButton label="Add User" type="button" (click)="openAddUserDialog=true"></button>
   </div>
 </div>
-<ul>
-  <li *ngFor="let user of users">
-    <a routerLink="/details/{{user.id}}">{{ user.fullName }}</a>
+<div id="list">
+  <ul>
+    <li *ngFor="let user of getUsers()">
+      <a routerLink="/details/{{user.id}}">{{ user.fullName }}</a>
 
-    <ul>
-      <li>{{ user.email }}</li>
-      <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
-    </ul>
-  </li>
-</ul>
+      <ul>
+        <li>{{ user.email }}</li>
+        <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
 
 <p-dialog header="Add User" [(visible)]="openAddUserDialog" [modal]="true" [style]="{width: '600px', height: '400px'}">
   <form class="p-grid" [formGroup]="userForm" (ngSubmit)="postUser(userForm.value)">

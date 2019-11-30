@@ -35,4 +35,7 @@ public class User {
     @Column
     private String website;
 
+    @Column
+    private String country;
+
 }

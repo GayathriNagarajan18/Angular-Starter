@@ -21,12 +21,12 @@ fdescribe('DataService', () => {
   it('should post a user', () => {
     const user = {name: 'Gayathri'};
     service.postUser(user);
-    expect(mockHttpClient.post).toHaveBeenCalledWith('http://localhost:8080/users-back/api/data/user', user);
+    expect(mockHttpClient.post).toHaveBeenCalledWith('http://localhost:8080/users-back-1.0/api/data/user', user);
   });
   it('should persist a post', () => {
     const post = {title: 'Angular'};
     service.persistPost(post);
-    expect(mockHttpClient.post).toHaveBeenCalledWith('http://localhost:8080/users-back/api/data/post', post);
+    expect(mockHttpClient.post).toHaveBeenCalledWith('http://localhost:8080/users-back-1.0/api/data/post', post);
   });
 });
 
