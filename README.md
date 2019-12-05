@@ -9,6 +9,6 @@
 ## Softwares needed for backend - IntelliJ/Eclipse, Gradle, Wildfly
 - Generate war - gradle clean build war
 - The war will be in build/libs
-- Setup Wildfly
+- Setup Wildfly - Refer https://gayathri.smvi.co/wildfly%20server%20setup
 - Deploy to Widlfly
 
